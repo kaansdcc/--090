@@ -962,3 +962,5 @@ setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
   console.log("RTX Bot");
 }, 10000);
+
+
