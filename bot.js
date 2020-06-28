@@ -124,7 +124,7 @@ client.on("message", async message => {
 client.on("message", async message => {
   if(message.author.id === client.user.id) return;
   if(message.guild) return;
-  client.channels.get('645670665784918017').send(new Discord.RichEmbed().setAuthor("Yeni Bir DM", client.user.avatarURL).setFooter(message.author.tag, message.author.avatarURL).setDescription(`**Gönderenin ID:** ${message.author.id}`).setTimestamp().addField("Mesaj", message.content).setColor("RANDOM"))
+  client.channels.get('722894068840923267').send(new Discord.RichEmbed().setAuthor("Yeni Bir DM", client.user.avatarURL).setFooter(message.author.tag, message.author.avatarURL).setDescription(`**Gönderenin ID:** ${message.author.id}`).setTimestamp().addField("Mesaj", message.content).setColor("RANDOM"))
 })
 
 client.on('message', async message => {
@@ -929,7 +929,7 @@ const ms = require('parse-ms')
          const embed = new Discord.RichEmbed()
          .setColor('BLACK')
          .setTitle('Gold Üye!')
-         .setDescription('<a:golduye:679716769304281189> **Bir gold üye belirdi!**')
+         .setDescription('<a:golduye:723658396477292694> **Bir gold üye belirdi!**')
 
          message.channel.send(embed)
     }
@@ -942,3 +942,23 @@ const ms = require('parse-ms')
        return
      } 
 });
+
+/////////////////////////
+/*
+7/24 Glitch Host
+*/
+
+const http = require("http");
+const path = require("path");
+const express = require("express");
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " OW Ping aldık beyler");
+  response.sendStatus(200);
+  //response.sendFile(path.join(__dirname+'/index.html'))
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+  console.log("RTX Bot");
+}, 10000);
