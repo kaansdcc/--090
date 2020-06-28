@@ -5,8 +5,8 @@ exports.run = (client, message, args) => {
   
     const juke = new Discord.RichEmbed()
     .setColor('GOLD')
-    .setAuthor(`RTX-BOT | Yetkili Komutları`, client.user.avatarURL) 
-      .setDescription('**[destek sunucum için tıkla](https://discord.gg/aedtftG)**')
+    .setAuthor(`RTX BOT | Yetkili Komutları`, client.user.avatarURL) 
+      .setDescription('**[Destek sunucum için tıkla](https://discord.gg/hv8sz3c)**')
 .setThumbnail(client.user.avatarURL)
       .addField('**Genel**', '`kick`, `oylama`, `reboot`, `ban`, `banlist`, `duyuru`, `çekiliş`, `isim`, `fakemesaj`, `uyarı`, `sabitle`, `partner`, `botkontrol`')
       .addField('**Gerekli Komutlar**', '`otorol-sistemi`, `sayaç-sistemi`, `kayıt-sistemi`, `seviye-sistemi`, `sunucu-sistemi`')
