@@ -964,3 +964,29 @@ setInterval(() => {
 }, 10000);
 
 
+/////Küfür Engel v3/////////
+
+client.on("message", msg => { 
+db.fetch(`kufur_${msg.guild.id}`).then(i => { 
+
+if (i == 'acik') { 
+const kufur = ["oç", "amk", "ananı sikeyim", "ananısikm", "piç", "amk", "amnsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amck", "yarram", "sikimi ye", "mk", "mq", "aq", "am", "amq",]; 
+
+if (kufur.some(word => msg.content.includes(word))) { try { 
+if (!msg.member.hasPermission("BAN_MEMBERS")) { 
+msg.delete(); return msg.reply('Küfür etmemelisin! ⚠').then(msg => msg.delete(3000)); } } 
+
+catch(err) { 
+
+console.log(err); 
+
+  } 
+ } 
+} 
+
+else if (i == 'kapali') { } 
+
+if (!i) return; 
+}) 
+
+});
