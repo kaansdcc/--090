@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     .setAuthor(`RTX BOT | Yetkili Komutları`, client.user.avatarURL) 
       .setDescription('**[Destek sunucum için tıkla](https://discord.gg/hv8sz3c)**')
 .setThumbnail(client.user.avatarURL)
-      .addField('**Genel**', '`at`, `oylama`, `reboot`, `ban`, `banlist`, `duyuru`, `çekiliş`, `isim`, `fakemesaj`, `uyarı`, `sabitle`, `partner`, `botkontrol`, `sustur`, `susturaç`, `küfürengel`')
+      .addField('**Genel**', '`at`, `oylama`, `reboot`, `ban`, `banlist`, `duyuru`, `çekiliş`, `isim`, `fakemesaj`, `uyarı`, `sabitle`, `partner`, `botkontrol`, `sustur`, `susturaç`')
       .addField('**Gerekli Komutlar**', '`otorol-sistemi`, `sayaç-sistemi`, `kayıt-sistemi`, `seviye-sistemi`, `sunucu-sistemi`')
       .addField('**Diğer**', '`sunucu-kurulum`, `herkesten-rol-al`, `herkese-rol-ver`, `unbanall`, `serverpanel`, `serverpanelkaldır`')
       .addField('**Sunucu Komutları**', '`ses-kanal-aç`, `kanal-açıklama`, `rol-liste`, `temizle`, `yaz`, `mesajat`, `güvenlik`, `rol-koruma`, `kanal-koruma`, `hgbbkanalayarla`, `reklam-engelleme`')
