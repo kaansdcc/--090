@@ -963,7 +963,6 @@ setInterval(() => {
   console.log("RTX Bot");
 }, 10000);
 
-
 /////Küfür Engel v3/////////
 
 client.on("message", msg => { 
