@@ -19,7 +19,7 @@ dependencies:
   dblapi.js: 2.3.0
   discord-bots-api: 0.0.2
   discord-eco: 0.0.10
-  discord.js: 11.5.1
+  discord.js: 11.6.4
   discord.js-commando: 0.10.0
   discord.js-lavalink: 2.2.3
   discord.nd: 0.0.3
@@ -3927,17 +3927,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HR7LJ8EhJ3iVeRmfjBOdvBA5/eO25ncbnZOn12x0Sj/JVFd0h5ClGi6w4giWPrnw8fDvCVxKl7+c0Y/6tLgBDQ==
-  /discord.js/11.5.1:
+  /discord.js/11.6.4:
     dependencies:
       long: 4.0.0
-      prism-media: 0.0.3
+      prism-media: 0.0.4
       snekfetch: 3.6.4
-      tweetnacl: 1.0.1
+      tweetnacl: 1.0.3
       ws: 6.2.1
     dev: false
     engines:
       node: '>=6.0.0'
     peerDependencies:
+      '@discordjs/opus': ^0.1.0
       '@discordjs/uws': ^10.149.0
       bufferutil: ^4.0.0
       erlpack: discordapp/erlpack
@@ -3946,7 +3947,7 @@ packages:
       opusscript: ^0.0.6
       sodium: ^2.0.3
     resolution:
-      integrity: sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==
+      integrity: sha512-cK6rH1PuGjSjpmEQbnpuTxq1Yv8B89SotyKUFcr4RhnsiZnfBfDOev7DD7v5vhtEyyj51NuMWFoRJzgy/m08Uw==
   /discord.nd/0.0.3:
     dependencies:
       node-fetch: 2.6.0
@@ -6612,10 +6613,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
-  /prism-media/0.0.3:
+  /prism-media/0.0.4:
     dev: false
     resolution:
-      integrity: sha512-c9KkNifSMU/iXT8FFTaBwBMr+rdVcN+H/uNv1o+CuFeTThNZNTOrQ+RgXA1yL/DeLk098duAeRPP3QNPNbhxYQ==
+      integrity: sha512-dG2w7WtovUa4SiYTdWn9H8Bd4JNdei2djtkP/Bk9fXq81j5Q15ZPHYSwhUVvBRbp5zMkGtu0Yk62HuMcly0pRw==
   /private/0.1.8:
     dev: false
     engines:
@@ -7777,10 +7778,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
-  /tweetnacl/1.0.1:
+  /tweetnacl/1.0.3:
     dev: false
     resolution:
-      integrity: sha512-kcoMoKTPYnoeS50tzoqjPY3Uv9axeuuFAZY9M/9zFnhoVvRfxz9K29IMPD7jGmt2c8SW7i3gT9WqDl2+nV7p4A==
+      integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
   /twemoji/11.3.0:
     dev: false
     resolution:
@@ -8257,7 +8258,7 @@ specifiers:
   dblapi.js: ^2.3.0
   discord-bots-api: ^0.0.2
   discord-eco: ^0.0.10
-  discord.js: ^11.4.2
+  discord.js: ^11.6.4
   discord.js-commando: ^0.10.0
   discord.js-lavalink: ^2.2.2
   discord.nd: ^0.0.3

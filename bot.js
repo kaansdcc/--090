@@ -361,10 +361,10 @@ client.on('guildMemberAdd', async member => {
 
 client.on("guildCreate", guild => { // Birisi botu sunucuya attıgında bot özel mesaj atar.
 const tesekkurler = new Discord.RichEmbed()
-.setTitle(`iBot | Bilgilendirme`)
+.setTitle(`RTX Bot | Bilgilendirme`)
 .setTimestamp()
 .setColor("GREEN")
-.setDescription(`Beni Sunucuna Eklediğin İçin Teşekkür Ederim \n Sana En İyi Şekilde Hizmet Edeceğim.\n Eğer Bir Sorunla Karşılaşırsan Destek Sunucuma Gel  https://discord.gg/AHe4u4m \n Komutlarımız için **!yardım** komutunu kullanınız.`)
+.setDescription(`Beni Sunucuna Eklediğin İçin Teşekkür Ederim \n Sana En İyi Şekilde Hizmet Edeceğim.\n Eğer Bir Sorunla Karşılaşırsan Sunucuma Gel  https://discord.gg/hv8sz3c \n Komutlarımız için **!yardım** komutunu kullanınız.`)
 guild.owner.send(tesekkurler)
 
 
@@ -962,3 +962,5 @@ setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
   console.log("RTX Bot");
 }, 10000);
+
+////// AFK /////
