@@ -1,29 +1,40 @@
 const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
 
-let botid = ('650739604789395476') //bu yere botun id'sini yapıştırın.
-//eğer botunuz dbl(discord bot list) de yoksa Bota Oy Ver (Vote) olmucaktır.
+var prefix = ayarlar.prefix;
+//
 
-exports.run = (client, message, args) => {
-    const embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setAuthor(`${client.user.username} İletişim Bilgileri`)
-    .addField('BİZ KİMİZ?', 'Discord kullanıcıların sunucularını daha iyi hale getirmek için çabalayan bir ekibiz.')//ne kadar yetkili komutunuz varsa o kadar .addField('prefix+komut', 'açıklama/kullanım amacı') koyun
-    .addField(`» Linkler`, `[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=650739604789395476&scope=bot&permissions=805314622
-) **|** [Destek Sunucusu](https://discord.gg/AHe4u4m) **|** [Bota Oy Ver (Vote)](https://discordbots.org/bot/${botid}/vote) **|** [Web Sitesi ( Yakında )]()`)//websiteniz yoksa  **|** [Web Sitesi]() yeri silebilirsiniz
-    message.channel.sendEmbed(embed);
+exports.run = (client, message, params) => {
+  const embedyardim = new Discord.RichEmbed()
+  .setTitle(`${client.user.username}`)
+  .setDescription('')
+  .setColor("WebPanel")
+    .setDescription('')
+      .setDescription(' \n\n**__Botu Davet Etmek için__** [Tıkla](https://discordapp.com/oauth2/authorize?client_id=726784124999696485&scope=bot&permissions=2146958847)')
+      .setFooter(`© ${client.user.username}` )
 
+  if (!params[0]) {
+    const commandNames = Array.from(client.commands.keys());
+    const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
+    message.channel.send(embedyardim);
+  } else {
+    let command = params[0];
+    if (client.commands.has(command)) {
+      command = client.commands.get(command);
+      message.author.send('asciidoc', `= ${command.help.name} = \n${command.help.description}\nDoğru kullanım: ` + prefix + `${command.help.usage}`);
+    }
+  }
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
-  permLevel: 0,
+  aliases: ['gold','Gold'],
+  permLevel: 0
 };
 
 exports.help = {
-  name: 'bizkimiz',
-  description: 'bot hakkında bilgi',
-  usage: 'davetet'
+  name: 'davet',
+  description: 'webpanel i gosterir.',
+  usage: 'webpanel '
 };
-   
