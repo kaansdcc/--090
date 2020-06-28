@@ -438,7 +438,7 @@ client.on("roleCreate", async (rolee, member, guild) => {
 });
 
 client.on("guildCreate", guild => {  // sunucuya eklendim ve atıldım
-let add = client.channels.get("673134347683102771")
+let add = client.channels.get("722894068840923267")
 const eklendim = new Discord.RichEmbed()
 
 .setTitle(`Sunucuya Eklendim`)
@@ -456,7 +456,7 @@ add.send(eklendim)
 });
 
 client.on("guildDelete", guild => {
-let remove = client.channels.get("673134347683102771")
+let remove = client.channels.get("722894068840923267")
 const atildim = new Discord.RichEmbed()
 
 .setTitle(`Sunucudan Atıldım`)
@@ -502,9 +502,9 @@ client.on("message", async msg => {
                     msg.delete();                   
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
-                    .setFooter('iBot  -|-  Reklam engellendi.', client.user.avatarURL)
+                    .setFooter('RTX Bot -|-  Reklam engellendi.', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("iBot Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .setDescription("RTX Bot Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
                     .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
@@ -641,7 +641,7 @@ if (!modlogkanal) return;
   .setColor("BLUE")
   .setTitle("MESAJ SİLİNDİ")
 .setDescription(`<@!${message.author.id}> adlı kullanıcı tarafından <#${message.channel.id}> kanalına gönderilen mesaj silindi!\n\nSilinen Mesaj: **${message.content}**`)
-  .setFooter("iBot |  Mod-Log")
+  .setFooter("RTX Bot |  Mod-Log")
   modlogkanal.sendEmbed(embed);
   })
 
@@ -655,7 +655,7 @@ if (!modlogkanal) return;
 
 	.setDescription(`Üye Sunucudan Yasaklandı! \n<@!${message.user.id}>, ${message.user.tag}`)
 		.setThumbnail(message.user.avatarURL)
-  .setFooter("iBot | mod-log")
+  .setFooter("RTX Bot | mod-log")
   modlogkanal.sendEmbed(embed);
   })
 client.on('channelCreate', async channel  => {
@@ -929,7 +929,7 @@ const ms = require('parse-ms')
          const embed = new Discord.RichEmbed()
          .setColor('BLACK')
          .setTitle('Gold Üye!')
-         .setDescription('<a:krst:627824669201793024> **Bir gold üye belirdi!**')
+         .setDescription('<a:golduye:679716769304281189> **Bir gold üye belirdi!**')
 
          message.channel.send(embed)
     }
