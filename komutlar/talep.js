@@ -19,9 +19,9 @@ exports.run = (client, message, args) => {
 
         const embed = new Discord.RichEmbed()
         .setTitle(`» Hey ${message.author.username} !`)
-        .setAuthor("» Tosun Bot | Destek Sistemi")
-        .setDescription("**Buradaki destek ekibimiz sizinle ilgilenecektir.\nDestek talebini iptal etmek için [!kapat](https://discord.gg/kQJQJgr ) yazabilirsin!**")
-        .setFooter('Tosun Bot | Destek Sistemi', client.user.avatarURL)
+        .setAuthor("» RTX Bot | Destek Sistemi")
+        .setDescription("**Buradaki destek ekibimiz sizinle ilgilenecektir.\nDestek talebini iptal etmek için [!kapat](https://discord.gg/hv8sz3c) yazabilirsin!**")
+        .setFooter('RTX Bot | Destek Sistemi', client.user.avatarURL)
         .setTimestamp()
         ch.send(embed).catch()
         ch.send("@everyone")
