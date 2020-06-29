@@ -7,9 +7,9 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
 var oyun = [
-        "!yardım - Otorol Güncellendi🔥",
+        "!yardım - Reklam Engel🔥",
         "!yardım - Küfür Engel⚠️",
-        "!yardım - Kayıt Sistemi⭐️",
+        "⭐️https://lndbot.glitch.me/ | Sitemiz açıldı",
     ];
 
     setInterval(function() {
