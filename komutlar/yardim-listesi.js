@@ -17,7 +17,7 @@ exports.run = (client, message, params) => {
         "**\n**" +
         `[Site Link](https://lndbot.glitch.me/)` +
         "**\n**" +
-        `[Destek Sunucusu](https://discord.gg/hv8sz3c)`,
+        `[Destek Sunucusu](https://discord.gg/Gv58MDh)`,
       false
     )
     .setFooter("RTX Bot | Yardım Komutları");
