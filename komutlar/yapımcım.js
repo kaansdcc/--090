@@ -9,7 +9,7 @@ exports.run = (client, message) => {
     .setAuthor(message.author.username, message.author.avatarURL)
     .setColor('RANDOM')
     .setTimestamp()
-    .addField('**Yapımcım: **', 'senuzulme#1881')
+    .addField('**Yapımcım: **', '! Huysuz#5462')
     message.channel.sendEmbed(ozelmesajkontrol) }
 };
 

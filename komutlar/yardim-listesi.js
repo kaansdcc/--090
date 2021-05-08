@@ -20,7 +20,7 @@ exports.run = (client, message, params) => {
         `[Destek Sunucusu](https://discord.gg/Gv58MDh)`,
       false
     )
-    .setFooter("RTX Bot | Yardım Komutları");
+    .setFooter("Astrayos Creative   | Yardım Komutları");
 
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
