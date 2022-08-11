@@ -1,38 +1,40 @@
 const Discord = require('discord.js');
-exports.run = (client, msg, args) => {
-  if (!msg.guild) {
-  const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor(0xFF0000)
-  .setTimestamp()
-  .setAuthor(msg.author.username, msg.author.avatarURL)
-  .addField(':warning: Uyarı :warning:', '`at` adlı komutu özel mesajlarda kullanamazsın.')
-  return msg.author.sendEmbed(ozelmesajuyari); }
-  let guild = msg.guild
-  let reason = args.slice(1).join(' ');
-  let user = msg.mentions.users.first();
-  if (msg.mentions.users.size < 1) return msg.reply('Kimi sunucudan atacağını yazmalısın.').catch(console.error);
-  
-  if (!msg.guild.member(user).kickable) return msg.reply('Yetkilileri sunucudan atamam.');
-  msg.guild.member(user).kick();
+const ayarlar = require('../ayarlar.json')
 
-  const embed = new Discord.RichEmbed()
-    .setColor(0xD97634)
-    .setTimestamp()
-	.setAuthor(msg.author.username, msg.author.avatarURL)
-    .addField('Eylem:', 'Sunucudan atma')
-    .addField('Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
-    .addField('Yetkili:', `${msg.author.username}#${msg.author.discriminator}`);
+exports.run = async (bot, message, args) => {
+var prefix = ayarlar.prefix;            
+   
+  if (!message.member.permissions.has("KICK_MEMBERS")) return message.channel.send(`Bu komutu kullanabilmek için **Üyeleri At** iznine sahip olmalısın!`);
+
+    let user = message.mentions.users.first() || message.client.users.cache.get(args[0]) || message.client.users.cache.find(m => m.username === args.slice(0).join(" ")) || message.author;
+  let reason = args.slice(1).join(' ');
+
+  if (message.mentions.users.size < 1) return message.channel.send(`Sunucudan atmam için istediğiniz kullanıcıyı etiketlemelisiniz; \**${prefix}kick @Avn *sebep* \** `);
+  if (user.id === message.author.id) return message.channel.send('Birini atmam için herhangi bir kişiyi etiketlemen gerek.');
+if (user.position > message.member.roles.highest.position) return message.channel.send(`Bu kullanıcının senin rollerinden/rolünden daha yüksek rolleri/rolü var.`);
+                if (!reason) reason = 'Belirtilmemiş.'
+    if (!user) return message.channel.send(`Etiketlediğin kullanıcıyı sunucuda bulamadım.`)
+    let member = message.guild.member(user)
+    if (!member) return message.channel.send(`Etiketlediğin kullanıcıyı sunucuda bulamadım.`)
+
+if (!message.guild.member(user).bannable) return message.channel.send(`Bu kişiyi sunucudan atamıyorum çünkü \`benden daha yüksek bir role sahip\` ya da \`bana gerekli yetkileri vermedin\`.`);
+
+   if (!message.guild.member(user).bannable) return message.channel.send('Sunucudaki yetkilileri atamam!');
+    message.guild.member(user).kick(reason);
+message.channel.send(`<@${user.id}> Adlı kullanıcı sunucudan kicklendi! **Sebep**: \`${reason}\``)
+
+
 };
 
 exports.conf = {
-  enabled: true,
-  guildOnly: true,
   aliases: ['at'],
-  permLevel: 2
+  permLevel: 0,
+  kategori: "Moderatör",
 };
 
 exports.help = {
-  name: 'at',
-  description: 'İstediğiniz kişiyi sunucudan atar.',
-  usage: 'at [kullanıcı]'
+  name: 'kick',
+  description: 'Belirttiğiniz kişiyi sunucudan atar.',
+  usage: 'kick <@kullanıcı> <sebep>',
+
 };

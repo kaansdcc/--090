@@ -13,6 +13,10 @@ exports.run = (client, message, args) => {
   if (!message.guild.member(user).bannable) return message.reply('Yetkilileri banlayamam.');
   message.guild.ban(user, 2);
 
+if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Bu komudu kullanabilmek için `Üyeleri Yasakla` yetkisine sahip olmanız gerek.");
+ 
+    
+
   const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
