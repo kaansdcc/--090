@@ -1,40 +1,45 @@
-const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json')
+const Discord = require("discord.js");
+const db = require("quick.db");
+module.exports.run = async (bot, message, args) => {
+  if (!message.member.hasPermission("KICK_MEMBERS")) {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+    const embed = new Discord.MessageEmbed()
+      .setDescription("```Ne yazık ki bu komutu kullanmaya yetkin yok.```")
+      .setColor("BLACK");//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+ 
+    message.channel.send(embed);
+    return;
+  }
+ 
+  let u = message.mentions.users.first();
+  if (!u) {
+    return message.channel.send(//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+      new Discord.MessageEmbed()
+        .setDescription("Lütfen atılacak kişiyi etiketleyiniz!")
+        .setColor("BLACK")
+        .setFooter(bot.user.username, bot.user.avatarURL)
+    );
+  }
+ //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+ 
+        message.channel.send(
+          `İşlem onaylandı! şahıs sunucudan atıldı!`
+        );
+ //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+        message.guild.member(u).kick();
+      }
+  
 
-exports.run = async (bot, message, args) => {
-var prefix = ayarlar.prefix;            
-   
-  if (!message.member.permissions.has("KICK_MEMBERS")) return message.channel.send(`Bu komutu kullanabilmek için **Üyeleri At** iznine sahip olmalısın!`);
-
-    let user = message.mentions.users.first() || message.client.users.cache.get(args[0]) || message.client.users.cache.find(m => m.username === args.slice(0).join(" ")) || message.author;
-  let reason = args.slice(1).join(' ');
-
-  if (message.mentions.users.size < 1) return message.channel.send(`Sunucudan atmam için istediğiniz kullanıcıyı etiketlemelisiniz; \**${prefix}kick @Avn *sebep* \** `);
-  if (user.id === message.author.id) return message.channel.send('Birini atmam için herhangi bir kişiyi etiketlemen gerek.');
-if (user.position > message.member.roles.highest.position) return message.channel.send(`Bu kullanıcının senin rollerinden/rolünden daha yüksek rolleri/rolü var.`);
-                if (!reason) reason = 'Belirtilmemiş.'
-    if (!user) return message.channel.send(`Etiketlediğin kullanıcıyı sunucuda bulamadım.`)
-    let member = message.guild.member(user)
-    if (!member) return message.channel.send(`Etiketlediğin kullanıcıyı sunucuda bulamadım.`)
-
-if (!message.guild.member(user).bannable) return message.channel.send(`Bu kişiyi sunucudan atamıyorum çünkü \`benden daha yüksek bir role sahip\` ya da \`bana gerekli yetkileri vermedin\`.`);
-
-   if (!message.guild.member(user).bannable) return message.channel.send('Sunucudaki yetkilileri atamam!');
-    message.guild.member(user).kick(reason);
-message.channel.send(`<@${user.id}> Adlı kullanıcı sunucudan kicklendi! **Sebep**: \`${reason}\``)
-
-
+ 
+module.exports.conf = {
+  aliases: [],
+  permLevel: 2,//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  enabled: true,
+  guildOnly: true,
+  kategori: "moderasyon"
 };
-
-exports.conf = {
-  aliases: ['at'],
-  permLevel: 0,
-  kategori: "Moderatör",
-};
-
-exports.help = {
-  name: 'kick',
-  description: 'Belirttiğiniz kişiyi sunucudan atar.',
-  usage: 'kick <@kullanıcı> <sebep>',
-
-};
+ //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+module.exports.help = {
+  name: "kick",
+  description: "kick",
+  usage: "kick"//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+};//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
